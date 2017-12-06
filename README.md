@@ -5,7 +5,7 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)  
 
-This implements basic capablity de/serialization
+This implements basic capability de/serialization
 
 # INSTALL
 `npm install primea-capability`
