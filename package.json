@@ -1,0 +1,38 @@
+{
+  "name": "primea-capabilty",
+  "version": "0.0.0",
+  "description": "implements basic capablity de/serialization",
+  "main": "index.js",
+  "scripts": {
+    "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc npm test",
+    "lint": "standard",
+    "test": "node ./tests/index.js",
+    "build:docs": "documentation build --github  -f md ./index.js > ./docs/index.md"
+  },
+  "keywords": [
+    "primea"
+  ],
+  "author": "mjbecze <mjbecze@gmail.com>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "buffer-pipe": "0.0.1",
+    "leb128": "0.0.4",
+    "safe-buffer": "^5.1.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "documentation": "^5.2.0",
+    "nyc": "^11.3.0",
+    "standard": "^10.0.0",
+    "tape": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:primea/js-primea-capability.git"
+  },
+  "bugs": {
+    "url": "https://github.com/primea/js-primea-capability/issues"
+  },
+  "homepage": "https://github.com/primea/js-primea-capability"
+}
