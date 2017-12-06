@@ -31,6 +31,15 @@ module.exports = class Capability {
    */
   static deserialize (raw) {
     const p = new Pipe(raw)
+    return Capability.deserializeFromPipe(p)
+  }
+
+  /**
+   * Deserializes a capability from a buffer-pipe and returns a new instance of `Capability`
+   * @param {Pipe} p
+   * @returns {Object}
+   */
+  static deserializeFromPipe (p) {
     const id = p.read(20)
     const tag = leb128.readBn(p).toNumber()
     return new Capability(id, tag)
