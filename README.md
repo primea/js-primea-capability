@@ -20,6 +20,31 @@ const cap = new Capability(id, 5)
 
 # API
 
+## constructor
+
+creates a new capability given the id of the process creating it and a "tag"
+
+**Parameters**
+
+-   `id` **[Buffer](https://nodejs.org/api/buffer.html)** 
+-   `tag` **Integer**  (optional, default `0`)
+
+## serialize
+
+Serializes the capability
+
+Returns **[Buffer](https://nodejs.org/api/buffer.html)** 
+
+## deserialize
+
+Deserializes a Buffer and returns a new instance of `Capability`
+
+**Parameters**
+
+-   `raw` **[Buffer](https://nodejs.org/api/buffer.html)** 
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+
 
 # LICENSE
 [MPL-2.0](https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2))
