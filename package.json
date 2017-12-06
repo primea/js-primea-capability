@@ -1,7 +1,7 @@
 {
   "name": "primea-capability",
   "version": "0.0.0",
-  "description": "implements basic capablity de/serialization",
+  "description": "implements basic capablitiy de/serialization",
   "main": "index.js",
   "scripts": {
     "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
