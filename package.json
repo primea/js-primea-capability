@@ -1,6 +1,6 @@
 {
   "name": "primea-capability",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "implements basic capablitiy de/serialization",
   "main": "index.js",
   "scripts": {
