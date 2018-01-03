@@ -21,18 +21,19 @@ const cap = new Capability(id, 5)
 
 ## constructor
 
-[index.js:11-14](https://github.com/primea/js-primea-capability/blob/b50729c29d14950556e098f75f62ae1f7aa8f470/index.js#L11-L14 "Source code on GitHub")
+[index.js:12-19](https://github.com/primea/js-primea-capability/blob/9f44019e29fa0a61c74821c9cfbfb4ba2376201b/index.js#L12-L19 "Source code on GitHub")
 
-creates a new capability given the id of the process creating it and a "tag"
+creates a new capability given the path of the process creating it and a "tag"
 
 **Parameters**
 
--   `id` **[Buffer](https://nodejs.org/api/buffer.html)** 
+-   `path` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Buffer](https://nodejs.org/api/buffer.html)>** 
 -   `tag` **Integer**  (optional, default `0`)
+-   `funIndex`   (optional, default `0`)
 
 ## serialize
 
-[index.js:20-25](https://github.com/primea/js-primea-capability/blob/b50729c29d14950556e098f75f62ae1f7aa8f470/index.js#L20-L25 "Source code on GitHub")
+[index.js:25-32](https://github.com/primea/js-primea-capability/blob/9f44019e29fa0a61c74821c9cfbfb4ba2376201b/index.js#L25-L32 "Source code on GitHub")
 
 Serializes the capability
 
@@ -40,7 +41,7 @@ Returns **[Buffer](https://nodejs.org/api/buffer.html)**
 
 ## deserialize
 
-[index.js:32-35](https://github.com/primea/js-primea-capability/blob/b50729c29d14950556e098f75f62ae1f7aa8f470/index.js#L32-L35 "Source code on GitHub")
+[index.js:39-42](https://github.com/primea/js-primea-capability/blob/9f44019e29fa0a61c74821c9cfbfb4ba2376201b/index.js#L39-L42 "Source code on GitHub")
 
 Deserializes a Buffer and returns a new instance of `Capability`
 
@@ -52,7 +53,7 @@ Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ## deserializeFromPipe
 
-[index.js:42-46](https://github.com/primea/js-primea-capability/blob/b50729c29d14950556e098f75f62ae1f7aa8f470/index.js#L42-L46 "Source code on GitHub")
+[index.js:49-59](https://github.com/primea/js-primea-capability/blob/9f44019e29fa0a61c74821c9cfbfb4ba2376201b/index.js#L49-L59 "Source code on GitHub")
 
 Deserializes a capability from a buffer-pipe and returns a new instance of `Capability`
 
@@ -62,6 +63,7 @@ Deserializes a capability from a buffer-pipe and returns a new instance of `Capa
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
-
 # LICENSE
-[MPL-2.0](https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2))
+[MPL-2.0][LICENSE]
+
+[LICENSE]: https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)

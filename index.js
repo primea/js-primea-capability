@@ -5,8 +5,8 @@ const Pipe = require('buffer-pipe')
 
 module.exports = class Capability {
   /**
-   * creates a new capability given the id of the process creating it and a "tag"
-   * @param {Buffer} id
+   * creates a new capability given the path of the process creating it and a "tag"
+   * @param {Array<Buffer>} path
    * @param {Integer} tag
    */
   constructor (path, tag = 0, funIndex = 0) {
