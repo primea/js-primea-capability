@@ -1,3 +1,4 @@
+const assert = require('assert')
 const Buffer = require('safe-buffer').Buffer
 const leb128 = require('leb128').unsigned
 const Pipe = require('buffer-pipe')
@@ -8,8 +9,12 @@ module.exports = class Capability {
    * @param {Buffer} id
    * @param {Integer} tag
    */
-  constructor (id, tag = 0) {
-    this.destId = id
+  constructor (path, tag = 0, funIndex = 0) {
+    if (!Array.isArray(path)) {
+      path = [path]
+    }
+    this.version = 0
+    this.path = path
     this.tag = tag
   }
 
@@ -19,7 +24,9 @@ module.exports = class Capability {
    */
   serialize () {
     return Buffer.concat([
-      this.destId,
+      leb128.encode(this.version),
+      leb128.encode(this.path.length),
+      Buffer.concat(this.path),
       leb128.encode(this.tag)
     ])
   }
@@ -40,8 +47,14 @@ module.exports = class Capability {
    * @returns {Object}
    */
   static deserializeFromPipe (p) {
-    const id = p.read(20)
+    const version = leb128.readBn(p).toNumber()
+    assert.equal(version, 0, 'version should be 0')
+    let numOfSegments = leb128.readBn(p).toNumber()
+    const path = []
+    while (numOfSegments--) {
+      path.push(p.read(20))
+    }
     const tag = leb128.readBn(p).toNumber()
-    return new Capability(id, tag)
+    return new Capability(path, tag)
   }
 }
